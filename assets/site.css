@@ -1,0 +1,131 @@
+/* Shared look for the landing page and the resume pages (same palette and type as the games home page). */
+:root {
+  --paper: #EDEFF2;
+  --card: #FFFFFF;
+  --ink: #16243A;
+  --ink-soft: #45586E;
+  --steel: #6B7E94;
+  --line: #C5CFDA;
+  --cable: #2456C9;
+  --signal: #E8922E;
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Spline Sans Mono', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--cable); }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+
+/* top bar */
+.topbar {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 28px 0; border-bottom: 1px solid var(--line);
+}
+.wordmark { font-family: var(--font-mono); font-size: 14px; color: var(--ink); text-decoration: none; }
+.wordmark b { color: var(--cable); font-weight: 500; }
+.topbar nav { font-family: var(--font-mono); font-size: 13px; color: var(--steel); }
+.topbar nav a { color: var(--steel); text-decoration: none; }
+.topbar nav a:hover, .topbar nav a[aria-current] { color: var(--cable); }
+
+.eyebrow {
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--steel); margin-bottom: 18px;
+}
+
+/* landing */
+.hero { padding: 78px 0 44px; }
+.hero h1 {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(38px, 7vw, 68px); line-height: 1.02; letter-spacing: -0.02em; margin-bottom: 20px;
+}
+.hero h1 .swap { color: var(--cable); }
+.hero p.lead { font-size: clamp(17px, 2.4vw, 20px); color: var(--ink-soft); max-width: 32em; }
+
+.paths { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-bottom: 40px; }
+.path {
+  display: block; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 30px 28px; text-decoration: none; color: var(--ink);
+  transition: border-color .15s, transform .15s;
+}
+.path:hover { border-color: var(--cable); transform: translateY(-2px); }
+.path .index { font-family: var(--font-mono); font-size: 13px; color: var(--steel); margin-bottom: 10px; }
+.path h2 { font-family: var(--font-display); font-weight: 600; font-size: 30px; letter-spacing: -0.01em; margin-bottom: 10px; }
+.path p { color: var(--ink-soft); margin-bottom: 18px; }
+.path .go { font-family: var(--font-mono); font-size: 14px; color: var(--cable); }
+.sublinks { margin-top: 14px; font-family: var(--font-mono); font-size: 13px; color: var(--steel); }
+.sublinks a { color: var(--ink-soft); }
+.sublinks a:hover { color: var(--cable); }
+
+footer {
+  border-top: 1px solid var(--line); margin-top: 30px; padding: 36px 0 56px;
+  display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 16px;
+}
+footer .contact a {
+  font-family: var(--font-display); font-weight: 600; font-size: 22px;
+  color: var(--ink); text-decoration: none; letter-spacing: -0.01em;
+}
+footer .contact a:hover { color: var(--cable); }
+footer .meta { font-family: var(--font-mono); font-size: 12px; color: var(--steel); }
+
+/* resume */
+.versions { display: flex; flex-wrap: wrap; gap: 8px; padding: 22px 0 0; align-items: center; }
+.versions .label { font-family: var(--font-mono); font-size: 12px; color: var(--steel); text-transform: uppercase; letter-spacing: 0.08em; margin-right: 6px; }
+.pill {
+  font-family: var(--font-mono); font-size: 13px; text-decoration: none; color: var(--ink-soft);
+  border: 1px solid var(--line); background: var(--card); padding: 6px 12px; border-radius: 999px;
+}
+.pill:hover { border-color: var(--ink); color: var(--ink); }
+.pill[aria-current] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.print-btn { margin-left: auto; cursor: pointer; font: inherit; font-family: var(--font-mono); font-size: 13px; }
+
+.resume {
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 44px 48px; margin: 22px 0 10px;
+}
+.resume header h1 { font-family: var(--font-display); font-weight: 700; font-size: 40px; letter-spacing: -0.02em; line-height: 1.1; }
+.resume header .role { font-family: var(--font-display); font-weight: 600; font-size: 19px; color: var(--cable); margin: 6px 0 12px; }
+.resume header .contact-line { font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft); }
+.resume header .contact-line a { color: var(--ink-soft); text-decoration: none; }
+.resume header .contact-line a:hover { color: var(--cable); }
+.resume section { margin-top: 30px; }
+.resume h2 {
+  font-family: var(--font-mono); font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--steel);
+  border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 14px;
+}
+.resume p { color: var(--ink-soft); }
+.resume ul { padding-left: 20px; color: var(--ink-soft); }
+.resume li { margin-bottom: 6px; }
+.resume li::marker { color: var(--steel); }
+.resume strong { color: var(--ink); font-weight: 500; }
+.job { margin-bottom: 22px; }
+.job h3 { font-family: var(--font-display); font-weight: 600; font-size: 18px; color: var(--ink); }
+.job h3 .org { color: var(--ink-soft); font-weight: 500; }
+.job .when { font-family: var(--font-mono); font-size: 12px; color: var(--steel); margin: 2px 0 8px; }
+.job h4 { font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--ink); margin-top: 10px; }
+.skills li { margin-bottom: 8px; }
+.result { color: var(--ink); font-weight: 500; }
+
+@media (max-width: 640px) {
+  .paths { grid-template-columns: 1fr; }
+  .resume { padding: 28px 22px; }
+  .resume header h1 { font-size: 32px; }
+  .topbar nav { font-size: 12px; }
+  .print-btn { margin-left: 0; }
+}
+
+@media print {
+  body { background: #fff; font-size: 10.5pt; line-height: 1.45; }
+  .topbar, .versions, footer, .no-print { display: none !important; }
+  .wrap { max-width: none; padding: 0; }
+  .resume { border: none; padding: 0; margin: 0; border-radius: 0; }
+  .resume section { margin-top: 16px; }
+  .job { margin-bottom: 12px; break-inside: avoid; }
+  a { color: inherit; text-decoration: none; }
+  @page { margin: 0.6in; }
+}
